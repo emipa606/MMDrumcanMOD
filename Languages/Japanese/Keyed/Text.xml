@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DrBa.relaxing>お風呂でくつろいでいる</DrBa.relaxing>
+  <DrBa.relaxingEclipse>日食を眺めながらお風呂でくつろいでいる</DrBa.relaxingEclipse>
+  <DrBa.relaxingAurora>オーロラを眺めながらお風呂でくつろいでいる</DrBa.relaxingAurora>
+  <DrBa.relaxingStars>星を眺めながらお風呂でくつろいでいる</DrBa.relaxingStars>
+  <DrBa.relaxingClouds>流れる雲を眺めつつお風呂でくつろいでいる</DrBa.relaxingClouds>
+  <DrBa.relaxingSunrise>日の出を眺めつつお風呂でくつろいでいる</DrBa.relaxingSunrise>
+  <DrBa.relaxingSunset>日没を眺めつつお風呂でくつろいでいる</DrBa.relaxingSunset>
+  <DrBa.drumBath>ドラム缶風呂</DrBa.drumBath>
+  <DrBa.forceBathing>(デバッグ)強制的に入浴させる</DrBa.forceBathing>
+</LanguageData>

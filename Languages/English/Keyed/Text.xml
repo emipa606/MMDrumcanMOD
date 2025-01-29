@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DrBa.relaxing>Relaxing in the bath</DrBa.relaxing>
+  <DrBa.relaxingEclipse>Relaxing in the bath while watching the solar eclipse</DrBa.relaxingEclipse>
+  <DrBa.relaxingAurora>Relaxing in the bath while watching the aurora borealis</DrBa.relaxingAurora>
+  <DrBa.relaxingStars>Relaxing in the bath while looking at the stars</DrBa.relaxingStars>
+  <DrBa.relaxingClouds>Relaxing in the bath while watching the passing clouds</DrBa.relaxingClouds>
+  <DrBa.relaxingSunrise>Relaxing in the bath while watching the sunrise</DrBa.relaxingSunrise>
+  <DrBa.relaxingSunset>Relaxing in the bath while watching the sunset</DrBa.relaxingSunset>
+  <DrBa.drumBath>drum bath</DrBa.drumBath>
+  <DrBa.forceBathing>(Debug) Force bathing</DrBa.forceBathing>
+</LanguageData>
