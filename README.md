@@ -1,4 +1,4 @@
-# [MMDrumcanMOD (Continued)]()
+# [MMDrumcanMOD (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=3417093756)
 
 ![Image](https://i.imgur.com/buuPQel.png)
 
@@ -64,4 +64,6 @@ I would like to take this opportunity to thank you.
 -  If you have the solution for a problem, please post it to the GitHub repository.
 -  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
+ 
 
+[![Image](https://img.shields.io/github/v/release/emipa606/MMDrumcanMOD?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3417093756) | tags:  japanese,  historical
