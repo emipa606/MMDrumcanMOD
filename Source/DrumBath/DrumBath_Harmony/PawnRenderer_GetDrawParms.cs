@@ -5,7 +5,7 @@ using Verse;
 namespace DrumBath_Harmony;
 
 [HarmonyPatch(typeof(PawnRenderer), "GetDrawParms")]
-public class Patch_GetDrawParms
+public class PawnRenderer_GetDrawParms
 {
     public static void Postfix(ref PawnDrawParms __result, Pawn ___pawn)
     {

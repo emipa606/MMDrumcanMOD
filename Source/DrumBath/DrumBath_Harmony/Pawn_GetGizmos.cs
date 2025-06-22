@@ -7,7 +7,7 @@ using Verse;
 namespace DrumBath_Harmony;
 
 [HarmonyPatch(typeof(Pawn), nameof(Pawn.GetGizmos))]
-internal class Harmony_PawnGizmoExtension
+internal class Pawn_GetGizmos
 {
     public static void Postfix(ref IEnumerable<Gizmo> __result, Pawn __instance)
     {

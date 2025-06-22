@@ -9,11 +9,11 @@ namespace DrumBath;
 
 public class CompDrumBathAnimalJobManager : ThingComp
 {
-    public int lastBathingTick = -1;
+    private int lastBathingTick = -1;
 
-    public Pawn Me;
+    private Pawn Me;
 
-    public CompProperties_DrumBathAnimalJobManager Props => (CompProperties_DrumBathAnimalJobManager)props;
+    private CompProperties_DrumBathAnimalJobManager Props => (CompProperties_DrumBathAnimalJobManager)props;
 
     public override void PostExposeData()
     {
@@ -30,7 +30,7 @@ public class CompDrumBathAnimalJobManager : ThingComp
     public override void CompTickRare()
     {
         base.CompTickRare();
-        if (Props.BathingMTBHours <= 0f || !CanJoyNow() || Find.TickManager.TicksGame <
+        if (Props.BathingMTBHours <= 0f || !canJoyNow() || Find.TickManager.TicksGame <
             lastBathingTick + Math.Round(Props.BathingMTBHours * 2500f))
         {
             return;
@@ -46,7 +46,7 @@ public class CompDrumBathAnimalJobManager : ThingComp
             return;
         }
 
-        var job = TryGiveJob(Me);
+        var job = tryGiveJob(Me);
         if (job == null)
         {
             return;
@@ -56,7 +56,7 @@ public class CompDrumBathAnimalJobManager : ThingComp
         Me.jobs.StartJob(job, JobCondition.Incompletable);
     }
 
-    private bool CanJoyNow()
+    private bool canJoyNow()
     {
         if (Me is not { Spawned: true } || Me.Dead || Me.Downed || Me.InAggroMentalState || !Me.Awake())
         {
@@ -66,7 +66,7 @@ public class CompDrumBathAnimalJobManager : ThingComp
         return Me.CurJob == null || Me.CurJob.def.isIdle;
     }
 
-    private Job TryGiveJob(Pawn pawn)
+    private static Job tryGiveJob(Pawn pawn)
     {
         if (!Utl.TryFindDrumBathCell(pawn.Position, pawn, out var c))
         {
@@ -114,7 +114,7 @@ public class CompDrumBathAnimalJobManager : ThingComp
                     return;
                 }
 
-                var job = TryGiveJob(Me);
+                var job = tryGiveJob(Me);
                 if (job == null)
                 {
                     return;

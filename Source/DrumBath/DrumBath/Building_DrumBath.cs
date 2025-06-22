@@ -15,7 +15,7 @@ public class Building_DrumBath : Building
 
     public CompRefuelable RefuelableComp => GetComp<CompRefuelable>();
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
         var ticksGame = Find.TickManager.TicksGame;

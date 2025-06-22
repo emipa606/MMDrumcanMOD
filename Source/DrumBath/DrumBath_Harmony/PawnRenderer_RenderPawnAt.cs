@@ -26,7 +26,7 @@ internal class PawnRenderer_RenderPawnAt
         }
 
         var thing = ___pawn.CurJob.targetB.Thing;
-        if (thing is not Building_DrumBath building_DrumBath)
+        if (thing is not Building_DrumBath buildingDrumBath)
         {
             return;
         }
@@ -50,6 +50,6 @@ internal class PawnRenderer_RenderPawnAt
             }
         }
 
-        drawLoc.z += building_DrumBath.BaseOffsetZ;
+        drawLoc.z += buildingDrumBath.BaseOffsetZ;
     }
 }

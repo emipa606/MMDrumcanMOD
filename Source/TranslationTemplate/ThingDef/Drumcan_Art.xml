@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Drumcan -->
+  <Drumcan.label>Drumcan</Drumcan.label>
+  <!-- EN: Ornamental drumscan. I can't press it. -->
+  <Drumcan.description>Ornamental drumscan. I can't press it.</Drumcan.description>
+  <!-- EN: Golden Drumcan -->
+  <GoldenDrumcan.label>Golden Drumcan</GoldenDrumcan.label>
+  <!-- EN: Ornamental drumcan made of gold. I can't press it. -->
+  <GoldenDrumcan.description>Ornamental drumcan made of gold. I can't press it.</GoldenDrumcan.description>
+</LanguageData>

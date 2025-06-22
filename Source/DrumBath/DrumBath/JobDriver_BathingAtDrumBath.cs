@@ -36,15 +36,15 @@ public class JobDriver_BathingAtDrumBath : JobDriver_VisitJoyThing
                     pawn.Drawer.renderer.SetAllGraphicsDirty();
                 }
             },
-            tickAction = delegate
+            tickIntervalAction = delegate(int delta)
             {
                 var jobPawn = pawn;
                 if (jobPawn.RaceProps.Humanlike)
                 {
-                    jobPawn.GainComfortFromCellIfPossible();
-                    PawnUtility.GainComfortFromThingIfPossible(jobPawn, job.targetB.Thing);
+                    jobPawn.GainComfortFromCellIfPossible(delta);
+                    PawnUtility.GainComfortFromThingIfPossible(jobPawn, job.targetB.Thing, delta);
                     var extraJoyGainFactor = 1.5f;
-                    JoyUtility.JoyTickCheckEnd(jobPawn, JoyTickFullJoyAction.EndJob, extraJoyGainFactor);
+                    JoyUtility.JoyTickCheckEnd(jobPawn, delta, JoyTickFullJoyAction.EndJob, extraJoyGainFactor);
                 }
 
                 HealthUtility.AdjustSeverity(jobPawn, HediffDefOf.Hed_BathingAtDrumBath, BaseHediffChange);
@@ -105,11 +105,11 @@ public class JobDriver_BathingAtDrumBath : JobDriver_VisitJoyThing
             : "DrBa.relaxingSunset".Translate();
     }
 
-    protected override void WaitTickAction()
+    protected override void WaitTickAction(int delta)
     {
-        pawn.GainComfortFromCellIfPossible();
+        pawn.GainComfortFromCellIfPossible(delta);
         var obj = pawn;
-        var extraJoyGainFactor = 1.3f;
-        JoyUtility.JoyTickCheckEnd(obj, JoyTickFullJoyAction.EndJob, extraJoyGainFactor, (Building)SpringThing);
+        const float extraJoyGainFactor = 1.3f;
+        JoyUtility.JoyTickCheckEnd(obj, delta, JoyTickFullJoyAction.EndJob, extraJoyGainFactor, (Building)SpringThing);
     }
 }
