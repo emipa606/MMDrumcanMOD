@@ -47,8 +47,8 @@ public class JobDriver_BathingAtDrumBath : JobDriver_VisitJoyThing
                     JoyUtility.JoyTickCheckEnd(jobPawn, delta, JoyTickFullJoyAction.EndJob, extraJoyGainFactor);
                 }
 
-                HealthUtility.AdjustSeverity(jobPawn, HediffDefOf.Hed_BathingAtDrumBath, BaseHediffChange);
-                HealthUtility.AdjustSeverity(jobPawn, RimWorld.HediffDefOf.Hypothermia, -0.0001f);
+                HealthUtility.AdjustSeverity(jobPawn, HediffDefOf.Hed_BathingAtDrumBath, BaseHediffChange * delta);
+                HealthUtility.AdjustSeverity(jobPawn, RimWorld.HediffDefOf.Hypothermia, -0.0001f * delta);
             }
         };
         toil.AddFinishAction(delegate
