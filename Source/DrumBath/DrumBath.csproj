@@ -15,9 +15,13 @@
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Krafs.Publicizer" Version="2.*" PrivateAssets="all" />
     <PackageReference Include="Lib.Harmony">
       <Version>*</Version>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp:RimWorld.Pawn_FilthTracker.carriedFilth" />
   </ItemGroup>
 </Project>

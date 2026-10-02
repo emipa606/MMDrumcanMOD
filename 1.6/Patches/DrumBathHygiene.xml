@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Grafts the component onto the hediff MMDrumcanMOD applies for the whole length of the bath.
+       That hediff is already an exact marker for "this pawn is soaking": hooking onto it avoids
+       patching the bath driver's tickAction, a lambda locked inside an iterator.
+
+       The guard is on the existence of the hediff itself, not on a mod identifier: insensitive to
+       the _steam suffix, to a rename, and to a local copy. Without the drum bath mod, nothing
+       happens.
+
+       The component in turn guards itself on the Dubs Bad Hygiene side: without DBH it is inert.
+       Both mods are therefore optional, and both are needed for anything to happen - which is
+       exactly the point. -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[defName="Hed_BathingAtDrumBathPassive"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+
+        <!-- That particular hediff declares no hediffClass, so it defaults to plain `Hediff`,
+             which cannot carry components: RimWorld refuses it with "has comps but hediffClass
+             is not HediffWithComps". Its twin `Hed_BathingAtDrumBath` does declare
+             HediffWithComps - the author simply had no need for it here.
+
+             So what we want is an "add or replace", to stay correct if a future version of the
+             drum bath mod declares the field. RimWorld 1.6 does NOT provide a
+             PatchOperationAddOrReplace: the full list is Add, AddModExtension, Attribute*,
+             Conditional, FindMod, Insert, Pathed, Remove, Replace, Sequence, SetName, Test. We
+             therefore express it as a conditional on the field itself. -->
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/HediffDef[defName="Hed_BathingAtDrumBathPassive"]/hediffClass</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>Defs/HediffDef[defName="Hed_BathingAtDrumBathPassive"]/hediffClass</xpath>
+            <value>
+              <hediffClass>HediffWithComps</hediffClass>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/HediffDef[defName="Hed_BathingAtDrumBathPassive"]</xpath>
+            <value>
+              <hediffClass>HediffWithComps</hediffClass>
+            </value>
+          </nomatch>
+        </li>
+
+        <!-- Same precaution on the comps: append to the list if it already exists, create it
+             otherwise. A second <comps> node would not be merged. -->
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/HediffDef[defName="Hed_BathingAtDrumBathPassive"]/comps</xpath>
+          <match Class="PatchOperationAdd">
+            <xpath>Defs/HediffDef[defName="Hed_BathingAtDrumBathPassive"]/comps</xpath>
+            <value>
+              <li Class="DrumBath.HediffCompProperties_DrumBathHygiene">
+                <cleanPerTick>0.0005</cleanPerTick>
+                <privacyCheckInterval>300</privacyCheckInterval>
+              </li>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/HediffDef[defName="Hed_BathingAtDrumBathPassive"]</xpath>
+            <value>
+              <comps>
+                <li Class="DrumBath.HediffCompProperties_DrumBathHygiene">
+                  <cleanPerTick>0.0005</cleanPerTick>
+                  <privacyCheckInterval>300</privacyCheckInterval>
+                </li>
+              </comps>
+            </value>
+          </nomatch>
+        </li>
+
+      </operations>
+    </match>
+  </Operation>
+
+</Patch>
