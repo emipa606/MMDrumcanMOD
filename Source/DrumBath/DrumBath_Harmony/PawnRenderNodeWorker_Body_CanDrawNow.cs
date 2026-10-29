@@ -5,7 +5,7 @@ using Verse;
 namespace DrumBath_Harmony;
 
 [HarmonyPatch(typeof(PawnRenderNodeWorker_Body), nameof(PawnRenderNodeWorker_Body.CanDrawNow))]
-public class PawnRenderNodeWorker_Body_CanDrawNow
+public static class PawnRenderNodeWorker_Body_CanDrawNow
 {
     public static void Postfix(ref bool __result, PawnDrawParms parms)
     {

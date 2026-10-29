@@ -9,9 +9,8 @@ namespace DrumBath;
 
 public class CompDrumBathAnimalJobManager : ThingComp
 {
-    private int lastBathingTick = -1;
-
     private Pawn Me;
+    private int lastBathingTick = -1;
 
     private CompProperties_DrumBathAnimalJobManager Props => (CompProperties_DrumBathAnimalJobManager)props;
 

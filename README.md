@@ -1,18 +1,19 @@
 # [MMDrumcanMOD (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=3417093756)
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://img.litet.net/logos/Info.png)
 
 Update of dragons mod https://steamcommunity.com/sharedfiles/filedetails/?id=2100895553
 
 - Fixed the English translation
+- For Dubs Bad Hygiene compatibility, check out [Drum Bath Hygiene](https://steamcommunity.com/sharedfiles/filedetails/?id=3806137182) by Nelim17
 
-![Image](https://i.imgur.com/pufA0kM.png)
+![Image](https://img.litet.net/logos/Notice.png)
 	
-![Image](https://i.imgur.com/Z4GOv8H.png)
+![Image](https://img.litet.net/logos/OriginalDescription.png)
 
 Adds drumcan barrels for your colonists to bathe in! These barrels are a historical type of bath in Japan and is still used as an emergency bath for camping and disasters, but in Rimworld.
 
-![Image](https://i.imgur.com/s3KRLlu.gif)
+![Image](https://img.litet.net/logos/ImageNotFound.png)
 
 # Contents
 
@@ -52,13 +53,13 @@ Prisoner Recreation page: https://steamcommunity.com/sharedfiles/filedetails/?id
 
 I would like to take this opportunity to thank you.
 
-![Image](https://i.imgur.com/PwoNOj4.png)
+![Image](https://img.litet.net/logos/ReportingIssues.png)
 
 
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
+-  Always post your log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404)
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
@@ -66,4 +67,4 @@ I would like to take this opportunity to thank you.
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/MMDrumcanMOD?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3417093756) | tags:  japanese,  historical
+[![Image](https://img.shields.io/github/v/release/emipa606/MMDrumcanMOD?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3417093756) | historical, japanese

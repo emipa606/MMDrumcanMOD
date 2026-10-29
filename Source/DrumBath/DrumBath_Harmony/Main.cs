@@ -5,7 +5,7 @@ using Verse;
 namespace DrumBath_Harmony;
 
 [StaticConstructorOnStartup]
-internal class Main
+internal static class Main
 {
     static Main()
     {

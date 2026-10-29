@@ -7,11 +7,11 @@ namespace DrumBath;
 public class Building_DrumBath : Building
 {
     public float BaseOffsetZ;
-
-    public float fuelConsumePerTick;
     private int LastMoteTick;
 
     private int NextMoteTick = Mathf.RoundToInt(Random.value * 500f);
+
+    public float fuelConsumePerTick;
 
     public CompRefuelable RefuelableComp => GetComp<CompRefuelable>();
 

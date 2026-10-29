@@ -6,4 +6,15 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="DrumBath/DrumBath.csproj" />
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/Text.xml" />
+  </Folder>
+  <Folder Name="/XML/Defs/">
+    <File Path="../Defs/Drumcan_Art.xml" />
+    <File Path="../Defs/Drumcan_Bath.xml" />
+    <File Path="../Defs/Drumcan_Push.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
 </Solution>

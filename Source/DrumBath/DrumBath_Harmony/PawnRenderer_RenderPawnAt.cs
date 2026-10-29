@@ -9,9 +9,9 @@ using Verse;
 namespace DrumBath_Harmony;
 
 [HarmonyPatch]
-internal class PawnRenderer_RenderPawnAt
+internal static class PawnRenderer_RenderPawnAt
 {
-    private static IEnumerable<MethodBase> TargetMethods()
+    public static IEnumerable<MethodBase> TargetMethods()
     {
         yield return AccessTools.Method(typeof(PawnRenderer), nameof(PawnRenderer.RenderPawnAt));
         yield return AccessTools.Method(typeof(PawnRenderer), "ParallelPreRenderPawnAt");

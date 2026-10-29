@@ -1,34 +1,77 @@
-# GitHub Copilot Instructions for RimWorld Modding Project
+# GitHub Copilot Instructions for MMDrumcanMOD (Continued)
 
 ## Mod Overview and Purpose
-This mod introduces new features and systems to RimWorld, enhancing the gameplay experience by adding unique interactions with a special building known as the Drum Bath. The main purpose of the mod is to provide colonists with a new method of recreation, bathing at the Drum Bath, which impacts mood and offers specific joy types.
+
+MMDrumcanMOD is a RimWorld mod that adds drumcan barrels for your colonists to bathe in. These barrels are a historical type of bath in Japan and are still used as an emergency bath for camping and disasters. The mod also includes two new working drumcan barrels that can be found under the Recreation menu. Pawns will receive a positive moodlet for soaking in this historical style of bath.
 
 ## Key Features and Systems
-- **Drum Bath Building**: A new building allowing colonists to indulge in a joyful bathing experience, enhancing their mood and providing positive effects.
-- **Animal Graphic Setting**: Allows for custom graphics for animals within the game, providing a more varied visual experience.
-- **Jobs and Joy Givers**: Includes new job definitions and joy givers related to interacting with the Drum Bath.
-- **Adjustments and Management**: Component-based architecture for managing animal jobs and visual adjustments related to the Drum Bath.
+
+- **Drumcan Barrels**: Two new working drumcan barrels for colonists to bathe in, found under the Recreation menu.
+- **Fueling**: Drums must be fueled with wood periodically.
+- **Positive Moodlet**: Pawns receive a positive moodlet for soaking in the drumcan barrels.
+- **Push Drum**: Fun and interactive push drum feature.
+- **Prisoner Recreation**: Prisoners also have access to these recreations as they will have additional entertainment gauges.
+- **Golden Drums and Drums as Works of Art**: Can be created from the sculpture table.
 
 ## Coding Patterns and Conventions
-- **Class and Method Naming**: Follows C# conventions with PascalCase for class and method names.
-- **DefModExtension Usage**: Utilizes `DefModExtension` for extending built-in classes with additional properties or methods.
-- **ThingComp for Component Logic**: Uses `ThingComp` and `CompProperties` to modularize features and allow easy integration with RimWorld's Thing architecture.
+
+- **C# Code Structure**: The mod follows a clear and organized C# code structure, with separate files for different components and systems.
+- **XML Integration**: XML files are used to define various elements of the mod, such as hediff definitions, job definitions, and joy kind definitions.
+- **Harmony Patching**: The mod uses Harmony patching to integrate with the RimWorld game code and add new features.
+- **Mod Dependencies**: The mod depends on the Harmony mod, which must be installed for the mod to work.
 
 ## XML Integration
-- **Def Files**: Uses XML definitions to declare new Things, Jobs, and Hediffs. These definitions are critical for introducing new objects or actions into the game.
-- **DefModExtensions**: Integrates XML with C# for custom behaviors, such as the `AnimalGraphicSetter` which extends functionality to support enhanced graphics for animals.
+
+The mod uses XML files to define various elements of the mod. The XML files are located in the `DefInjected` folder and include:
+
+- `HediffDef/Drumcan_Bath.xml`: Defines the hediff for the drumcan bath.
+- `JobDef/Drumcan_Bath.xml`: Defines the job for the drumcan bath.
+- `JobDef/Drumcan_Push.xml`: Defines the job for the push drum.
+- `JoyKindDef/Drumcan_Bath.xml`: Defines the joy kind for the drumcan bath.
 
 ## Harmony Patching
-- Harmony is essential for modifying existing game methods non-destructively.
-- Use Harmony patches to inject additional logic or tweak existing behaviors gracefully.
-- Ensure patches are targeted and preserve original functionality where possible.
+
+The mod uses Harmony patching to integrate with the RimWorld game code and add new features. The Harmony patches are located in the `DrumBath_Harmony` folder and include:
+
+- `Pawn_GetGizmos.cs`: Postfix patch to add the drumcan bath gizmo to pawns.
 
 ## Suggestions for Copilot
-1. **Code Completion and Suggestions**: When creating new classes or methods, suggest boilerplate code consistent with existing class patterns such as constructors for `ThingComp` and overrides for utility classes.
-2. **XML Integration**: Assist with crafting XML snippets for new ThingDefs, JobDefs, and HediffDefs based on existing template structures.
-3. **Harmony Patches**: Propose patches for commonly overridden RimWorld methods, ensuring conflict-free modding.
-4. **Error Handling and Logging**: Suggest try-catch blocks and logging for debugging purposes to track issues in dynamic interactions.
-5. **Performance Optimization**: Propose efficient code patterns, especially when dealing with rendering or frequent method calls to ensure high performance.
-6. **Modular Code Design**: Encourage the use of components (`ThingComp`) for extensibility and separation of concerns within the mod.
 
-By adhering to these guidelines and leveraging Copilot effectively, developers can streamline their workflow and focus on enriching the gameplay experience of RimWorld through innovative modding efforts.
+- **C# Code Generation**: Use Copilot to generate C# code for new features or components, such as new gizmos or job definitions.
+- **XML Generation**: Use Copilot to generate XML files for new hediff definitions, job definitions, or joy kind definitions.
+- **Harmony Patch Generation**: Use Copilot to generate Harmony patches for new features or components, such as new gizmos or job definitions.
+- **Bug Fixes**: Use Copilot to generate potential fixes for bugs reported by users.
+
+## Contributing to MMDrumcanMOD
+
+If you would like to contribute to MMDrumcanMOD, please follow these steps:
+
+1. Fork the repository on GitHub.
+2. Clone the forked repository to your local machine.
+3. Create a new branch for your changes.
+4. Make your changes to the code.
+5. Commit your changes with a descriptive commit message.
+6. Push your changes to your forked repository.
+7. Create a pull request to the main MMDrumcanMOD repository.
+
+Please also make sure to test your changes thoroughly before submitting a pull request.
+
+## Contact
+
+If you have any questions or issues with the mod, please contact the mod author on the Discord channel or via GitHub issues.
+
+## Project Solution Guidelines
+- Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
+- Use these in-solution XML files as the primary files for reference and modification.
+- The `.github/copilot-instructions.md` file is included in the solution under the `.github` solution folder, so it should be read/modified from within the solution instead of using paths outside the solution. Update this file once only, as it and the parent-path solution reference point to the same file in this workspace.
+- When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution `.github` copy as the primary file.
+- In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.
+- For any new documentation, update this copilot-instructions.md file rather than creating separate documentation files.
+
+
+## Hard rules (must follow)
+- Do NOT run commands that modify the repo (no git commit, git apply, dotnet format) unless explicitly asked.
+- Prefer minimal reads: read only the smallest code region needed (around the suspicious lines).
+- When mentioning SonarQube issues, automatically use the SonarQube MCP service to fetch and address issues instead of making inferred fixes without querying SonarQube first.
+- When mentioning the rimworld log, automatically use the Rimworld MCP service to fetch the log.
+

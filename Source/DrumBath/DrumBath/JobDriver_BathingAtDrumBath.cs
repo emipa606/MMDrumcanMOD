@@ -90,19 +90,17 @@ public class JobDriver_BathingAtDrumBath : JobDriver_VisitJoyThing
         }
 
         var num = GenCelestial.CurCelestialSunGlow(Map);
-        if (num < 0.1f)
+        switch (num)
         {
-            return "DrBa.relaxingStars".Translate();
+            case < 0.1f:
+                return "DrBa.relaxingStars".Translate();
+            case >= 0.65f:
+                return "DrBa.relaxingClouds".Translate();
+            default:
+                return GenLocalDate.DayPercent(pawn) < 0.5f
+                    ? "DrBa.relaxingSunrise".Translate()
+                    : "DrBa.relaxingSunset".Translate();
         }
-
-        if (num >= 0.65f)
-        {
-            return "DrBa.relaxingClouds".Translate();
-        }
-
-        return GenLocalDate.DayPercent(pawn) < 0.5f
-            ? "DrBa.relaxingSunrise".Translate()
-            : "DrBa.relaxingSunset".Translate();
     }
 
     protected override void WaitTickAction(int delta)
